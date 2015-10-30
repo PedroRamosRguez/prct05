@@ -9,7 +9,7 @@ class Fraccion
       @denom =  denom / x
     end  
 #================================================================================================
-	def MCD(u,v)
+    def MCD(u,v)
 
       u,v = u.abs,v.abs
       while v > 0
@@ -18,6 +18,31 @@ class Fraccion
       end
       u
       
-   	end
+    end
 #================================================================================================
+
+     def mcm(u,v)
+       x = u / MCD(u,v) * v
+     end
+  
+#================================================================================================
+
+
+ #Metodo para crear un numero fraccionario con numerador negativo(para realizar la resta de fracciones).
+ 
+  def -@
+    Fraccion.new(@num * (-1), @denom)
+  end
+  #metodo que crear el numero reciproco es decir (denominador/numerador), para realizar división de fracciones
+ 
+  def reciproco
+    Fraccion.new(@denom, @num)
+  end
+
+#================================================================================================
+
+
+
+
+
 end
