@@ -9,6 +9,11 @@ class TestPoint < Test::Unit::TestCase
   def test_simple
     assert(@frac1,"correcto")
     assert(@frac2,"correcto")
+    assert_operator(@frac1,'+',@frac2,"correcto")
+    assert_operator(@frac1,'-',@frac2,"correcto")
+    assert_operator(@frac1,'*',@frac2,"correcto")
+    assert_operator(@frac1,'/',@frac2,"correcto")
+
   end  
  
   def test_type_check

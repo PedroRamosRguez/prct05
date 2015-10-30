@@ -41,8 +41,40 @@ class Fraccion
 
 #================================================================================================
 
+ #suma
 
+  def +(numero)
 
+    minimo = mcm(@denom, numero.denom)
+    numero_a = @num * minimo / @denom 
+    numero_b = numero.num * minimo / numero.denom 
+    Fraccion.new( numero_a + numero_b, minimo)
 
+  end
+
+#resta
+
+  def -(numero)
+
+    self + (-numero) 
+
+  end
+
+# producto.
+
+  def *(numero)
+
+    Fraccion.new( @num * numero.num, @denom * numero.denom)
+
+  end
+
+#Division [muliplicandose el mismo por el reciproco(denom/num)]
+
+  def /(numero)
+
+    self * numero.reciproco
+    
+  end
+#================================================================================================
 
 end
